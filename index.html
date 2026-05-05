@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Victoria — Creative Brand Manager</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='12' fill='%23F9F5F1'/><text x='32' y='44' font-family='Georgia, serif' font-size='40' fill='%23E44031' text-anchor='middle'>%E2%9C%A6</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Figtree:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -230,6 +231,23 @@
     overflow: hidden;
   }
   .card-thumb.rect { aspect-ratio: 16/9; }
+
+  /* Real-image thumbs (replace the placeholder block with this) */
+  .card-thumb-img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+  }
+  .card-thumb-img.rect { aspect-ratio: 16/9; }
+  .card-thumb-img.portrait { aspect-ratio: 1/1; object-position: center top; }
+  .card-thumb-wrap {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+  }
+  .card:hover .card-thumb-img { transform: scale(1.03); }
 
   .thumb-1 { background: #2a1410; }
   .thumb-2 { background: #E7D8C9; }
@@ -487,15 +505,6 @@
       Here's a peek at some social content I've created in Canva for mission-driven organizations — each piece designed with intention and care.
     </p>
 
-    <div class="skills-row">
-      <span class="skill-tag">Social content</span>
-      <span class="skill-tag">Brand voice</span>
-      <span class="skill-tag">Visual identity</span>
-      <span class="skill-tag">Canva</span>
-      <span class="skill-tag">Mission-driven orgs</span>
-      <span class="skill-tag">Nonprofit</span>
-    </div>
-
     <!-- ══════════════════════════════════════════
          INSTAGRAM SECTION
          ══════════════════════════════════════════ -->
@@ -506,93 +515,81 @@
       </div>
       <div class="grid grid-3">
 
-        <!-- Card 1 -->
-        <a href="#" class="card">
-          <div class="card-thumb thumb-1">
-            <div class="thumb-inner">
-              <div class="t-line w-half accent"></div>
-              <div class="t-line w-full"></div>
-              <div class="t-line w-third"></div>
-            </div>
+        <!-- Card 1 — Teen Health 360 Self-Awareness Reel -->
+        <a href="https://canva.link/lvziq2oq2s0ed3q" target="_blank" rel="noopener" class="card">
+          <div class="card-thumb-wrap">
+            <img src="images/teen-health-360-self-awareness.png" alt="EVMS Teen Health 360 — What is self-awareness? Instagram Reel cover" class="card-thumb-img">
             <div class="thumb-reveal"><span class="reveal-text">View ✦</span></div>
-            <span class="placeholder-label">Your image</span>
           </div>
           <div class="card-body">
-            <div class="card-title">Example post title here</div>
-            <div class="card-desc">Brief context — org, campaign goal, what this post was meant to do.</div>
-            <a href="#" class="card-link">View on Canva →</a>
+            <div class="card-title">Teen Health 360 — Self-Awareness Reel</div>
+            <div class="card-desc">Instagram Reel for EVMS Teen Health 360, exploring social-emotional learning concepts for teen audiences.</div>
+            <span class="card-link">View on Canva →</span>
           </div>
         </a>
 
-        <!-- Card 2 -->
-        <a href="#" class="card">
-          <div class="card-thumb thumb-2">
-            <div class="thumb-inner dark-border">
-              <div class="t-line w-full dark"></div>
-              <div class="t-line w-half accent"></div>
-              <div class="t-line w-third dark"></div>
-            </div>
-            <div class="thumb-reveal dark-text"><span class="reveal-text">View ✦</span></div>
-            <span class="placeholder-label dark-text">Your image</span>
-          </div>
-          <div class="card-body">
-            <div class="card-title">Example post title here</div>
-            <div class="card-desc">Brief context — org, campaign goal, what this post was meant to do.</div>
-            <a href="#" class="card-link">View on Canva →</a>
-          </div>
-        </a>
-
-        <!-- Card 3 -->
-        <a href="#" class="card">
-          <div class="card-thumb thumb-3">
-            <div class="thumb-inner">
-              <div class="t-line w-full"></div>
-              <div class="t-line w-half"></div>
-              <div class="t-line w-third"></div>
-            </div>
+        <!-- Card 2 — Generic Theater Flyin' West -->
+        <a href="https://canva.link/hx5tormzvgdkp9r" target="_blank" rel="noopener" class="card">
+          <div class="card-thumb-wrap">
+            <img src="images/generic-theater-flyin-west.png" alt="Generic Theater — Flyin' West by Pearl Cleage Instagram promo" class="card-thumb-img">
             <div class="thumb-reveal"><span class="reveal-text">View ✦</span></div>
-            <span class="placeholder-label">Your image</span>
           </div>
           <div class="card-body">
-            <div class="card-title">Example post title here</div>
-            <div class="card-desc">Brief context — org, campaign goal, what this post was meant to do.</div>
-            <a href="#" class="card-link">View on Canva →</a>
+            <div class="card-title">Generic Theater — Flyin' West</div>
+            <div class="card-desc">Instagram promo for Generic Theater's production of Flyin' West by Pearl Cleage, directed by Terrance Afer-Anderson.</div>
+            <span class="card-link">View on Canva →</span>
           </div>
         </a>
 
-        <!-- Card 4 -->
-        <a href="#" class="card">
-          <div class="card-thumb thumb-4">
-            <div class="thumb-inner">
-              <div class="t-line w-third accent"></div>
-              <div class="t-line w-full"></div>
-              <div class="t-line w-half"></div>
-            </div>
+        <!-- Card 3 — Skillcrush UGC -->
+        <a href="https://canva.link/v5c83ixc2e19fac" target="_blank" rel="noopener" class="card">
+          <div class="card-thumb-wrap">
+            <img src="images/skillcrush-ugc-spillin-the-tea.png" alt="Skillcrush UGC Instagram carousel — top 5 reasons I chose Skillcrush" class="card-thumb-img">
             <div class="thumb-reveal"><span class="reveal-text">View ✦</span></div>
-            <span class="placeholder-label">Your image</span>
           </div>
           <div class="card-body">
-            <div class="card-title">Example story title here</div>
-            <div class="card-desc">Brief context — org, campaign goal, what this story was meant to do.</div>
-            <a href="#" class="card-link">View on Canva →</a>
+            <div class="card-title">Skillcrush — UGC Carousel</div>
+            <div class="card-desc">User-generated Instagram carousel for Skillcrush, supporting a UI/UX learning promotional week for the online learning platform.</div>
+            <span class="card-link">View on Canva →</span>
           </div>
         </a>
 
-        <!-- Card 5 -->
-        <a href="#" class="card">
-          <div class="card-thumb thumb-5">
-            <div class="thumb-inner dark-border">
-              <div class="t-line w-full dark"></div>
-              <div class="t-line w-third accent"></div>
-              <div class="t-line w-half dark"></div>
-            </div>
-            <div class="thumb-reveal dark-text"><span class="reveal-text">View ✦</span></div>
-            <span class="placeholder-label dark-text">Your image</span>
+        <!-- Card 4 — Generic Theater Giving Tuesday (story) -->
+        <a href="https://canva.link/bt5xccwhi1f4qen" target="_blank" rel="noopener" class="card">
+          <div class="card-thumb-wrap">
+            <img src="images/generic-theater-giving-tuesday.png" alt="Generic Theater — Giving Tuesday Instagram post" class="card-thumb-img">
+            <div class="thumb-reveal"><span class="reveal-text">View ✦</span></div>
           </div>
           <div class="card-body">
-            <div class="card-title">Example post title here</div>
-            <div class="card-desc">Brief context — org, campaign goal, what this post was meant to do.</div>
-            <a href="#" class="card-link">View on Canva →</a>
+            <div class="card-title">Generic Theater — Giving Tuesday</div>
+            <div class="card-desc">Instagram post driving tax-deductible donations for a community theater nonprofit.</div>
+            <span class="card-link">View on Canva →</span>
+          </div>
+        </a>
+
+        <!-- Card 5 — Teen Health 360 Microaggressions -->
+        <a href="https://canva.link/tvv6afztzvapeyi" target="_blank" rel="noopener" class="card">
+          <div class="card-thumb-wrap">
+            <img src="images/teen-health-360-microaggressions.png" alt="EVMS Teen Health 360 — What are microaggressions? Instagram post" class="card-thumb-img">
+            <div class="thumb-reveal"><span class="reveal-text">View ✦</span></div>
+          </div>
+          <div class="card-body">
+            <div class="card-title">Teen Health 360 — Microaggressions</div>
+            <div class="card-desc">Instagram post for EVMS Teen Health 360's social-emotional learning campaign, defining key terms like “microaggressions” for teen audiences.</div>
+            <span class="card-link">View on Canva →</span>
+          </div>
+        </a>
+
+        <!-- Card 6 — Generic Theater The Weir -->
+        <a href="https://canva.link/gqdlf63gv9yc9d5" target="_blank" rel="noopener" class="card">
+          <div class="card-thumb-wrap">
+            <img src="images/generic-theater-the-weir.png" alt="Generic Theater — The Weir animated Instagram promo" class="card-thumb-img">
+            <div class="thumb-reveal"><span class="reveal-text">View ✦</span></div>
+          </div>
+          <div class="card-body">
+            <div class="card-title">Generic Theater — The Weir</div>
+            <div class="card-desc">Animated Instagram promo for Generic Theater's production of The Weir, featuring atmospheric typography over production photography.</div>
+            <span class="card-link">View on Canva →</span>
           </div>
         </a>
 
@@ -609,39 +606,42 @@
       </div>
       <div class="grid grid-2">
 
-        <!-- Card 6 -->
-        <a href="#" class="card">
-          <div class="card-thumb rect thumb-6a">
-            <div class="thumb-inner">
-              <div class="t-line w-full accent"></div>
-              <div class="t-line w-half"></div>
-              <div class="t-line w-third"></div>
-            </div>
+        <!-- Card 6 — Empower the Barrios -->
+        <a href="https://canva.link/yf1uom2veih2lzw" target="_blank" rel="noopener" class="card">
+          <div class="card-thumb-wrap">
+            <img src="images/empower-the-barrios-voluntarios.png" alt="Empower the Barrios — Proyecto Voluntarios Profesionales Facebook post" class="card-thumb-img rect">
             <div class="thumb-reveal"><span class="reveal-text">View ✦</span></div>
-            <span class="placeholder-label">Your image</span>
           </div>
           <div class="card-body">
-            <div class="card-title">Example post title here</div>
-            <div class="card-desc">Brief context — org, campaign goal, what this post was meant to do.</div>
-            <a href="#" class="card-link">View on Canva →</a>
+            <div class="card-title">Empower the Barrios</div>
+            <div class="card-desc">Facebook post from a multi-channel campaign for a Colombia-based nonprofit serving barrio communities.</div>
+            <span class="card-link">View on Canva →</span>
           </div>
         </a>
 
-        <!-- Card 7 -->
-        <a href="#" class="card">
-          <div class="card-thumb rect thumb-6b">
-            <div class="thumb-inner dark-border">
-              <div class="t-line w-full dark"></div>
-              <div class="t-line w-half accent"></div>
-              <div class="t-line w-third dark"></div>
-            </div>
-            <div class="thumb-reveal dark-text"><span class="reveal-text">View ✦</span></div>
-            <span class="placeholder-label dark-text">Your image</span>
+        <!-- Card 7 — Generic Theater Flex Pass -->
+        <a href="https://canva.link/sa57osgp2q0jkec" target="_blank" rel="noopener" class="card">
+          <div class="card-thumb-wrap">
+            <img src="images/generic-theater-flex-pass.png" alt="Generic Theater — Season Flex Pass Facebook promo" class="card-thumb-img rect">
+            <div class="thumb-reveal"><span class="reveal-text">View ✦</span></div>
           </div>
           <div class="card-body">
-            <div class="card-title">Example post title here</div>
-            <div class="card-desc">Brief context — org, campaign goal, what this post was meant to do.</div>
-            <a href="#" class="card-link">View on Canva →</a>
+            <div class="card-title">Generic Theater — Season Flex Pass</div>
+            <div class="card-desc">Facebook promo from a series announcing 2023–2024 season flex pass sales for a community theater nonprofit.</div>
+            <span class="card-link">View on Canva →</span>
+          </div>
+        </a>
+
+        <!-- Card 8 — Generic Theater Flyin' West Performance Promo -->
+        <a href="https://canva.link/d7dn277saud6gol" target="_blank" rel="noopener" class="card">
+          <div class="card-thumb-wrap">
+            <img src="images/generic-theater-flyin-west-performance.png" alt="Generic Theater — Flyin' West weekend performances Facebook promo" class="card-thumb-img rect">
+            <div class="thumb-reveal"><span class="reveal-text">View ✦</span></div>
+          </div>
+          <div class="card-body">
+            <div class="card-title">Generic Theater — Flyin' West Performance Promo</div>
+            <div class="card-desc">Facebook promo featuring weekend performance times and press pull-quote for Generic Theater's production of Flyin' West.</div>
+            <span class="card-link">View on Canva →</span>
           </div>
         </a>
 
@@ -678,7 +678,7 @@
           </a>
         </div>
       </div>
-      <a href="/cdn-cgi/l/email-protection#05736c66716a776c6463647777456268646c692b666a68" class="cta-btn">Get in touch ↗</a>
+      <a href="/cdn-cgi/l/email-protection#cbbda2a8bfa4b9a2aaadaab9b98baca6aaa2a7e5a8a4a6" class="cta-btn">Get in touch ↗</a>
     </div>
   </div>
 </main>
