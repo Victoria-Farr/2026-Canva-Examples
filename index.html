@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Victoria — Creative Brand Manager</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Figtree:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --cauldron: #1A0705;
+    --geranium: #E44031;
+    --birch: #E7D8C9;
+    --moonstone: #F9F5F1;
+    --smoke: #908E8E;
+  }
+  body {
+    background-color: var(--moonstone);
+    color: var(--cauldron);
+    font-family: 'Figtree', sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+
+  header {
+    background-color: var(--birch);
+    padding: 3rem 2rem 2.5rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid rgba(26,7,5,0.08);
+  }
+  header::before {
+    content: '';
+    position: absolute;
+    top: -80px; left: 50%; transform: translateX(-50%);
+    width: 380px; height: 380px;
+    border-radius: 50%;
+    border: 1px solid rgba(228,64,49,0.1);
+    pointer-events: none;
+  }
+  header::after {
+    content: '';
+    position: absolute;
+    top: -40px; left: 50%; transform: translateX(-50%);
+    width: 220px; height: 220px;
+    border-radius: 50%;
+    border: 1px solid rgba(228,64,49,0.07);
+    pointer-events: none;
+  }
+
+  .eyebrow {
+    font-family: 'Figtree', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--geranium);
+    margin-bottom: 0.75rem;
+  }
+  header h1 {
+    font-family: 'Newsreader', serif;
+    font-weight: 300;
+    font-size: clamp(2rem, 5vw, 3rem);
+    color: var(--cauldron);
+    line-height: 1.15;
+    margin-bottom: 1rem;
+    position: relative;
+  }
+  header h1 em {
+    font-style: italic;
+    color: var(--geranium);
+  }
+  .tagline {
+    font-family: 'Figtree', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--smoke);
+    letter-spacing: 0.03em;
+    max-width: 420px;
+    margin: 0 auto;
+    line-height: 1.7;
+  }
+  .divider-mark {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin: 2rem auto 0;
+  }
+  .divider-mark span {
+    width: 40px; height: 1px;
+    background: rgba(26,7,5,0.15);
+  }
+  .divider-mark svg { opacity: 0.5; }
+
+  main {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 4rem;
+  }
+
+  .section-label {
+    font-family: 'Figtree', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--smoke);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: rgba(26,7,5,0.1);
+  }
+
+  .intro {
+    font-family: 'Newsreader', serif;
+    font-size: clamp(1.1rem, 2.5vw, 1.35rem);
+    font-weight: 300;
+    line-height: 1.7;
+    color: var(--cauldron);
+    max-width: 620px;
+    margin-bottom: 2rem;
+  }
+  .intro strong { font-weight: 600; font-style: italic; }
+
+  .skills-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 2.5rem;
+  }
+  .skill-tag {
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    padding: 4px 12px;
+    border: 1px solid rgba(26,7,5,0.15);
+    border-radius: 100px;
+    color: var(--cauldron);
+    background: transparent;
+  }
+
+  .platform-section { margin-bottom: 2.5rem; }
+
+  .platform-heading {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 1.25rem;
+  }
+  .platform-badge {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 100px;
+  }
+  .badge-instagram {
+    background: rgba(228,64,49,0.1);
+    color: var(--geranium);
+    border: 1px solid rgba(228,64,49,0.2);
+  }
+  .badge-facebook {
+    background: rgba(26,7,5,0.06);
+    color: var(--cauldron);
+    border: 1px solid rgba(26,7,5,0.15);
+  }
+  .platform-heading-line {
+    flex: 1; height: 1px;
+    background: rgba(26,7,5,0.07);
+  }
+
+  .grid { display: grid; gap: 1.25rem; }
+  .grid-3 { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); }
+  .grid-2 { grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
+
+  .card {
+    background: white;
+    border: 1px solid rgba(26,7,5,0.08);
+    border-radius: 4px;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+    text-decoration: none;
+    display: block;
+    color: inherit;
+  }
+  .card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(26,7,5,0.08);
+  }
+
+  /* ── THUMBNAIL AREA ────────────────────────────────────────────
+     To use your own image, replace the entire <div class="card-thumb ...">
+     block with:
+       <img src="your-image.jpg" alt="Description" class="card-thumb-img">
+     And add this rule to your CSS:
+       .card-thumb-img { width: 100%; aspect-ratio: 1/1; object-fit: cover; display: block; }
+     For Facebook (landscape) cards, use aspect-ratio: 16/9 instead.
+  ──────────────────────────────────────────────────────────────── */
+
+  .card-thumb {
+    width: 100%;
+    aspect-ratio: 1/1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .card-thumb.rect { aspect-ratio: 16/9; }
+
+  .thumb-1 { background: #2a1410; }
+  .thumb-2 { background: #E7D8C9; }
+  .thumb-3 { background: #E44031; }
+  .thumb-4 { background: #1A0705; }
+  .thumb-5 { background: #F9F5F1; }
+  .thumb-6a { background: #3d1a15; }
+  .thumb-6b { background: #c9b9a8; }
+
+  .thumb-inner {
+    width: 65%; height: 65%;
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 2px;
+    display: flex; align-items: center; justify-content: center;
+    flex-direction: column;
+    gap: 7px;
+    padding: 12px;
+  }
+  .thumb-inner.dark-border { border-color: rgba(26,7,5,0.12); }
+  .t-line { height: 2px; border-radius: 1px; background: rgba(255,255,255,0.25); }
+  .t-line.dark { background: rgba(26,7,5,0.2); }
+  .t-line.accent { background: rgba(228,64,49,0.55); }
+  .t-line.w-full { width: 80%; }
+  .t-line.w-half { width: 50%; }
+  .t-line.w-third { width: 35%; }
+
+  .placeholder-label {
+    font-family: 'Figtree', sans-serif;
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    opacity: 0.3;
+    color: white;
+    position: absolute;
+    bottom: 8px; right: 10px;
+  }
+  .placeholder-label.dark-text { color: var(--cauldron); }
+
+  .card-body { padding: 0.9rem 1.1rem 1.1rem; }
+
+  .card-title {
+    font-family: 'Newsreader', serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.35;
+    color: var(--cauldron);
+    margin-bottom: 5px;
+  }
+  .card-desc {
+    font-size: 12px;
+    color: var(--smoke);
+    line-height: 1.5;
+  }
+  .card-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 10px;
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--geranium);
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.15s;
+  }
+  .card-link:hover { border-color: var(--geranium); }
+
+  .outro {
+    border-top: 1px solid rgba(26,7,5,0.08);
+    padding-top: 2.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+  .outro-text h2 {
+    font-family: 'Newsreader', serif;
+    font-weight: 300;
+    font-size: 1.4rem;
+    color: var(--cauldron);
+    margin-bottom: 0.4rem;
+  }
+  .outro-text p {
+    font-size: 13px;
+    color: var(--smoke);
+    max-width: 320px;
+    line-height: 1.6;
+  }
+  .cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--geranium);
+    color: white;
+    font-family: 'Figtree', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    padding: 0.7rem 1.4rem;
+    border-radius: 2px;
+    text-decoration: none;
+    transition: background 0.2s ease;
+    border: none;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  .cta-btn:hover { background: #c22d21; }
+
+  .social-links {
+    display: flex;
+    gap: 10px;
+    margin-top: 1.25rem;
+    flex-wrap: wrap;
+  }
+  .social-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--cauldron);
+    text-decoration: none;
+    padding: 6px 14px 6px 10px;
+    border: 1px solid rgba(26,7,5,0.15);
+    border-radius: 100px;
+    transition: border-color 0.15s, color 0.15s;
+    letter-spacing: 0.02em;
+  }
+  .social-link:hover {
+    border-color: var(--geranium);
+    color: var(--geranium);
+  }
+  .social-link svg {
+    flex-shrink: 0;
+  }
+
+  footer {
+    background: var(--birch);
+    text-align: center;
+    padding: 1.5rem;
+    border-top: 1px solid rgba(26,7,5,0.08);
+  }
+  footer p {
+    font-size: 11px;
+    color: rgba(26,7,5,0.4);
+    letter-spacing: 0.08em;
+  }
+  footer p em {
+    font-style: normal;
+    color: var(--geranium);
+    opacity: 0.7;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="eyebrow">Creative Brand Manager</div>
+  <h1>Victoria<br><em>Listening deeply.<br>Designing intentionally.</em></h1>
+  <p class="tagline">Strategic brand management for change-makers — cohesive visual systems, not one-off graphics.</p>
+  <div class="divider-mark">
+    <span></span>
+    <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+      <circle cx="6" cy="6" r="2" fill="#E44031"/>
+      <circle cx="6" cy="6" r="5" stroke="#E44031" stroke-width="0.75"/>
+    </svg>
+    <span></span>
+  </div>
+</header>
+
+<main>
+  <p class="section-label">Work</p>
+
+  <p class="intro">
+    A selection of social content created to demonstrate cohesive brand voice, strategic messaging, and <strong>visual systems built to scale.</strong>
+  </p>
+
+  <div class="skills-row">
+    <span class="skill-tag">Social content</span>
+    <span class="skill-tag">Brand voice</span>
+    <span class="skill-tag">Visual identity</span>
+    <span class="skill-tag">Canva</span>
+    <span class="skill-tag">Mission-driven orgs</span>
+    <span class="skill-tag">Nonprofit</span>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       INSTAGRAM SECTION
+       ══════════════════════════════════════════ -->
+  <div class="platform-section">
+    <div class="platform-heading">
+      <span class="platform-badge badge-instagram">Instagram</span>
+      <div class="platform-heading-line"></div>
+    </div>
+    <div class="grid grid-3">
+
+      <!-- Card 1 — replace href with your Canva share link -->
+      <a href="#" class="card">
+        <div class="card-thumb thumb-1">
+          <div class="thumb-inner">
+            <div class="t-line w-half accent"></div>
+            <div class="t-line w-full"></div>
+            <div class="t-line w-third"></div>
+          </div>
+          <span class="placeholder-label">Your image</span>
+        </div>
+        <div class="card-body">
+          <div class="card-title">Example post title here</div>
+          <div class="card-desc">Brief context — org, campaign goal, what this post was meant to do.</div>
+          <a href="#" class="card-link">View on Canva →</a>
+        </div>
+      </a>
+
+      <!-- Card 2 -->
+      <a href="#" class="card">
+        <div class="card-thumb thumb-2">
+          <div class="thumb-inner dark-border">
+            <div class="t-line w-full dark"></div>
+            <div class="t-line w-half accent"></div>
+            <div class="t-line w-third dark"></div>
+          </div>
+          <span class="placeholder-label dark-text">Your image</span>
+        </div>
+        <div class="card-body">
+          <div class="card-title">Example post title here</div>
+          <div class="card-desc">Brief context — org, campaign goal, what this post was meant to do.</div>
+          <a href="#" class="card-link">View on Canva →</a>
+        </div>
+      </a>
+
+      <!-- Card 3 -->
+      <a href="#" class="card">
+        <div class="card-thumb thumb-3">
+          <div class="thumb-inner">
+            <div class="t-line w-full"></div>
+            <div class="t-line w-half"></div>
+            <div class="t-line w-third"></div>
+          </div>
+          <span class="placeholder-label">Your image</span>
+        </div>
+        <div class="card-body">
+          <div class="card-title">Example post title here</div>
+          <div class="card-desc">Brief context — org, campaign goal, what this post was meant to do.</div>
+          <a href="#" class="card-link">View on Canva →</a>
+        </div>
+      </a>
+
+      <!-- Card 4 -->
+      <a href="#" class="card">
+        <div class="card-thumb thumb-4">
+          <div class="thumb-inner">
+            <div class="t-line w-third accent"></div>
+            <div class="t-line w-full"></div>
+            <div class="t-line w-half"></div>
+          </div>
+          <span class="placeholder-label">Your image</span>
+        </div>
+        <div class="card-body">
+          <div class="card-title">Example story title here</div>
+          <div class="card-desc">Brief context — org, campaign goal, what this story was meant to do.</div>
+          <a href="#" class="card-link">View on Canva →</a>
+        </div>
+      </a>
+
+      <!-- Card 5 -->
+      <a href="#" class="card">
+        <div class="card-thumb thumb-5">
+          <div class="thumb-inner dark-border">
+            <div class="t-line w-full dark"></div>
+            <div class="t-line w-third accent"></div>
+            <div class="t-line w-half dark"></div>
+          </div>
+          <span class="placeholder-label dark-text">Your image</span>
+        </div>
+        <div class="card-body">
+          <div class="card-title">Example post title here</div>
+          <div class="card-desc">Brief context — org, campaign goal, what this post was meant to do.</div>
+          <a href="#" class="card-link">View on Canva →</a>
+        </div>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       FACEBOOK SECTION
+       ══════════════════════════════════════════ -->
+  <div class="platform-section">
+    <div class="platform-heading">
+      <span class="platform-badge badge-facebook">Facebook</span>
+      <div class="platform-heading-line"></div>
+    </div>
+    <div class="grid grid-2">
+
+      <!-- Card 6 -->
+      <a href="#" class="card">
+        <div class="card-thumb rect thumb-6a">
+          <div class="thumb-inner">
+            <div class="t-line w-full accent"></div>
+            <div class="t-line w-half"></div>
+            <div class="t-line w-third"></div>
+          </div>
+          <span class="placeholder-label">Your image</span>
+        </div>
+        <div class="card-body">
+          <div class="card-title">Example post title here</div>
+          <div class="card-desc">Brief context — org, campaign goal, what this post was meant to do.</div>
+          <a href="#" class="card-link">View on Canva →</a>
+        </div>
+      </a>
+
+      <!-- Card 7 -->
+      <a href="#" class="card">
+        <div class="card-thumb rect thumb-6b">
+          <div class="thumb-inner dark-border">
+            <div class="t-line w-full dark"></div>
+            <div class="t-line w-half accent"></div>
+            <div class="t-line w-third dark"></div>
+          </div>
+          <span class="placeholder-label dark-text">Your image</span>
+        </div>
+        <div class="card-body">
+          <div class="card-title">Example post title here</div>
+          <div class="card-desc">Brief context — org, campaign goal, what this post was meant to do.</div>
+          <a href="#" class="card-link">View on Canva →</a>
+        </div>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       CTA
+       ══════════════════════════════════════════ -->
+  <div class="outro">
+    <div class="outro-text">
+      <h2>Let's make something good.</h2>
+      <p>I work with nonprofits and soul-driven organizations who need a brand partner — not just a designer. Reach out and let's talk.</p>
+      <div class="social-links">
+        <a href="https://www.instagram.com/victoriahfarr/" target="_blank" rel="noopener" class="social-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+            <circle cx="12" cy="12" r="4"/>
+            <circle cx="17.5" cy="6.5" r="0.75" fill="currentColor" stroke="none"/>
+          </svg>
+          @victoriahfarr
+        </a>
+        <a href="https://www.facebook.com/victoriahamiltonfarr" target="_blank" rel="noopener" class="social-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M24 12.073C24 5.404 18.627 0 12 0S0 5.404 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.235 2.686.235v2.97h-1.513c-1.491 0-1.956.93-1.956 1.874v2.25h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/>
+          </svg>
+          victoriahamiltonfarr
+        </a>
+        <a href="https://github.com/Victoria-Farr" target="_blank" rel="noopener" class="social-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
+          </svg>
+          Victoria-Farr
+        </a>
+      </div>
+    </div>
+    <!-- Update this email address before sharing -->
+    <a href="mailto:hello@youremail.com" class="cta-btn">Get in touch ↗</a>
+  </div>
+</main>
+
+<footer>
+  <p>Victoria &nbsp;<em>✦</em>&nbsp; Creative Brand Manager for Change-Makers</p>
+</footer>
+
+</body>
+</html>
