@@ -303,6 +303,32 @@
   }
   .card:hover .card-thumb-img { transform: scale(1.03); }
 
+  .card-featured {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    margin-bottom: 1.25rem;
+    border-radius: 4px;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  .card-featured .card-thumb-wrap {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+  .card-featured .card-thumb-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.4s ease;
+  }
+  .card-featured .card-body {
+    padding: 1.25rem 1.5rem 1.5rem;
+  }
+  .card-featured:hover .card-thumb-img { transform: scale(1.02); }
+  .card-featured:hover .thumb-reveal { opacity: 1; }
+
   .thumb-1 { background: #2a1410; }
   .thumb-2 { background: #E7D8C9; }
   .thumb-3 { background: #E44031; }
@@ -559,6 +585,22 @@
         <span class="platform-badge badge-instagram">Instagram</span>
         <div class="platform-heading-line"></div>
       </div>
+      <!-- ── FEATURED: JCS Instagram Story ─────────────────────────
+           Replace href with Canva link, src with your thumbnail filename
+           Thumbnail size: 900 × 300px
+      ──────────────────────────────────────────────────────────── -->
+      <a href="https://canva.link/iqwlqvw5ukrk4qc" target="_blank" rel="noopener" class="card-featured">
+        <div class="card-thumb-wrap">
+          <img src="images/IG-JCS-Thumb.png" alt="JCS for VB School Board: Instagram Story" class="card-thumb-img" style="aspect-ratio:3/1; object-fit:cover;">
+          <div class="thumb-reveal"><span class="reveal-text">View <span style="color:var(--geranium)">♥</span></span></div>
+        </div>
+        <div class="card-body">
+          <div class="card-title">JCS for VB D10 School Board: Get to know District 10</div>
+          <div class="card-desc">Animated Instagram Story for a local political candidate — update with your description here.</div>
+          <span class="card-link">View on Canva →</span>
+        </div>
+      </a>
+
       <div class="grid grid-3">
 
         <!-- Card 1: Generic Theater Giving Tuesday -->
@@ -650,6 +692,22 @@
         <span class="platform-badge badge-facebook">Facebook</span>
         <div class="platform-heading-line"></div>
       </div>
+      <!-- ── FEATURED: JCS Facebook Posts ──────────────────────────
+           Replace href with Canva link, src with your thumbnail filename
+           Thumbnail size: 900 × 506px
+      ──────────────────────────────────────────────────────────── -->
+      <a href="https://canva.link/0k09gkk6vlovgep" target="_blank" rel="noopener" class="card-featured">
+        <div class="card-thumb-wrap">
+          <img src="images/JCS-FB-Thumbnail.png" alt="JCS for VB School Board: Facebook posts" class="card-thumb-img" style="aspect-ratio:16/9; object-fit:cover;">
+          <div class="thumb-reveal"><span class="reveal-text">View <span style="color:var(--geranium)">♦</span></span></div>
+        </div>
+        <div class="card-body">
+          <div class="card-title">JCS for VB D10 School Board: Facebook Posts</div>
+          <div class="card-desc">Series of Facebook posts for a local political candidate — update with your description here.</div>
+          <span class="card-link">View on Canva →</span>
+        </div>
+      </a>
+
       <div class="grid grid-2">
 
         <!-- Card 6: Empower the Barrios -->
